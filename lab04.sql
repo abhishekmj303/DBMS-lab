@@ -1,3 +1,6 @@
+set linesize 1000;
+set pagesize 1000;
+
 DROP TABLE committees;
 DROP TABLE member;
 
@@ -59,10 +62,6 @@ WHERE prerequisite.courseId = '608'
 -- Question 4
 -- Find all the students who have not taken any course offered by the teachers of course 319
 SELECT DISTINCT(student.rollNo), student.name FROM student
-INNER JOIN enrollment
-    ON student.rollNo = enrollment.rollNo
-LEFT JOIN (SELECT a.courseId FROM teaching a, teaching b WHERE a.empId = b.empId AND b.courseId = '319') c
-    ON c.courseId = enrollment.courseId
 MINUS
 SELECT DISTINCT(student.rollNo), student.name FROM student
 INNER JOIN enrollment
