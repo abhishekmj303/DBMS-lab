@@ -5,8 +5,8 @@ alter session set NLS_DATE_FORMAT = 'DD-MON-YYYY';
 DROP TABLE orders;
 DROP TABLE agent;
 DROP TABLE employees;
-DROP TABLE salesman;
 DROP TABLE sales_orders;
+DROP TABLE salesman;
 
 
 --Question 1 Tables
